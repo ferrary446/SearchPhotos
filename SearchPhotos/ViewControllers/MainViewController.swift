@@ -53,6 +53,7 @@ class MainViewController: UIViewController {
         if isFiltering {
             
             NetworkManager.shared.fetchPhoto(query: searchController.searchBar.text!) { photos in
+                
                 self.filteredResults = photos.results
             }
             performSegue(withIdentifier: "showResponse", sender: self)

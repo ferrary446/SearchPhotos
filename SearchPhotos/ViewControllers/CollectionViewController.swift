@@ -17,7 +17,6 @@ class CollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        self.collectionView.reloadData()
     }
     
     // MARK: UICollectionViewDataSource
@@ -40,10 +39,14 @@ class CollectionViewController: UICollectionViewController {
         let imageString = filteredResults[indexPath.row].urls.regular
         
         ImageManager.shared.configureCell(with: imageString) { photo in
-            
+
             let image = UIImage(data: photo)
             cell.photoImageView.image = image
             
+            DispatchQueue.main.async {
+                
+                self.collectionView.reloadData()
+            }
         }
         
         // Configure the cell
