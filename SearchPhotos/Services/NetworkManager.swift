@@ -12,6 +12,7 @@ class NetworkManager {
     
     private init() {}
     
+    // MARK: - Get data from API
     func fetchPhoto(query: String, with complition: @escaping (Photos) -> Void) {
         
         let stringUrl = "https://api.unsplash.com/search/photos?page=1&query=\(query)&client_id=\(apiKey)"
@@ -46,6 +47,7 @@ class ImageManager {
     
     private init() {}
     
+    // MARK: - Get image data
     func configureCell(with stringUrl: String, complition: @escaping (Data) -> Void) {
         
         guard let url = URL(string: stringUrl) else { return }

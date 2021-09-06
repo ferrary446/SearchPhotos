@@ -33,7 +33,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         setupSearchController()
-        
+        configureButton()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -55,14 +55,15 @@ class MainViewController: UIViewController {
             NetworkManager.shared.fetchPhoto(query: searchController.searchBar.text!) { photos in
                 
                 self.filteredResults = photos.results
+                self.performSegue(withIdentifier: "showResponse", sender: self)
             }
-            performSegue(withIdentifier: "showResponse", sender: self)
-            
         } else {
+            
             showAlert(with: "Ошибка", and: "Пожалуйста введите запрос!")
         }
     }
     
+    // MARK: - Search controller
     private func setupSearchController() {
         
         searchController.searchResultsUpdater = self
@@ -73,6 +74,7 @@ class MainViewController: UIViewController {
         navigationItem.hidesSearchBarWhenScrolling = false
     }
     
+    // MARK: - Alert controller
     private func showAlert(with title: String, and message: String) {
         
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -82,7 +84,11 @@ class MainViewController: UIViewController {
         present(alertController, animated: true)
     }
     
-    
+    private func configureButton() {
+        
+        searchButtonOutlet.backgroundColor = .systemBlue
+        searchButtonOutlet.layer.cornerRadius = 5
+    }
 }
 
 extension MainViewController: UISearchResultsUpdating {
@@ -96,5 +102,4 @@ extension MainViewController: UISearchResultsUpdating {
             results.urls.regular.lowercased().contains(searchText.lowercased())
         } 
     }
-    
 }

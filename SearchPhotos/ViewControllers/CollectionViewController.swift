@@ -11,15 +11,10 @@ class CollectionViewController: UICollectionViewController {
     
     var filteredResults: [Results]!
     
-    let itemsPerRow: CGFloat = 3
-    let sectionInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+    private let itemsPerRow: CGFloat = 2
+    private let sectionInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
     
-    override func viewDidLoad() {
-        
-        super.viewDidLoad()
-    }
-    
-    // MARK: UICollectionViewDataSource
+    // MARK: - UICollectionViewDataSource
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -28,7 +23,7 @@ class CollectionViewController: UICollectionViewController {
     
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
+        
         return filteredResults.count
     }
     
@@ -38,18 +33,13 @@ class CollectionViewController: UICollectionViewController {
         
         let imageString = filteredResults[indexPath.row].urls.regular
         
+        // Configure the cell
         ImageManager.shared.configureCell(with: imageString) { photo in
 
             let image = UIImage(data: photo)
             cell.photoImageView.image = image
             
-            DispatchQueue.main.async {
-                
-                self.collectionView.reloadData()
-            }
         }
-        
-        // Configure the cell
         
         return cell
     }
@@ -58,6 +48,7 @@ class CollectionViewController: UICollectionViewController {
 
 extension CollectionViewController: UICollectionViewDelegateFlowLayout {
     
+    // MARK: - Configure collection view layout
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         
