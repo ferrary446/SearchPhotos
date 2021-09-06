@@ -67,7 +67,7 @@
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photoCell" id="xNY-KX-EdG" customClass="PhotoCell" customModule="SearchPhotos" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Obk-ns-x3p">
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="SgB-ap-fxk">
                                     <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -78,8 +78,8 @@
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="o3R-D1-V3f" secondAttribute="bottom" id="NJU-EV-Wrx"/>
                                         <constraint firstAttribute="trailing" secondItem="o3R-D1-V3f" secondAttribute="trailing" id="fkW-OL-iif"/>
-                                        <constraint firstItem="o3R-D1-V3f" firstAttribute="leading" secondItem="Obk-ns-x3p" secondAttribute="leading" id="nkv-Be-zG7"/>
-                                        <constraint firstItem="o3R-D1-V3f" firstAttribute="top" secondItem="Obk-ns-x3p" secondAttribute="top" id="xZA-2X-cct"/>
+                                        <constraint firstItem="o3R-D1-V3f" firstAttribute="leading" secondItem="SgB-ap-fxk" secondAttribute="leading" id="nkv-Be-zG7"/>
+                                        <constraint firstItem="o3R-D1-V3f" firstAttribute="top" secondItem="SgB-ap-fxk" secondAttribute="top" id="xZA-2X-cct"/>
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <connections>

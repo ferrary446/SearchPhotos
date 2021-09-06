@@ -38,8 +38,8 @@ class CollectionViewController: UICollectionViewController {
 
             let image = UIImage(data: photo)
             cell.photoImageView.image = image
-            
         }
+        
         
         return cell
     }
@@ -52,11 +52,11 @@ extension CollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         
-        let paddingWidth = sectionInsets.left * (itemsPerRow + 1)
-        let availableWidth = collectionView.frame.width - paddingWidth
-        let widthPerItem = availableWidth / itemsPerRow
+//        let paddingWidth = sectionInsets.left * (itemsPerRow + 1)
+//        let availableWidth = collectionView.frame.width - paddingWidth
+//        let widthPerItem = availableWidth / itemsPerRow
         
-        return CGSize(width: widthPerItem, height: widthPerItem)
+        return CGSize(width: 150, height: 150)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
